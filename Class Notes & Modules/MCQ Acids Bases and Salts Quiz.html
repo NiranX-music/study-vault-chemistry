@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acids, Bases and Salts - Ultimate Exam Mastery Quiz | Created by Shekhar Sir (9819480122)</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --primary-light: #e0e7ff;
+            --success: #10b981;
+            --success-light: #d1fae5;
+            --danger: #ef4444;
+            --danger-light: #fee2e2;
+            --warning: #f59e0b;
+            --warning-light: #fef3c7;
+            --dark: #0f172a;
+            --gray-900: #1e293b;
+            --gray-700: #334155;
+            --gray-500: #64748b;
+            --gray-300: #cbd5e1;
+            --gray-100: #f1f5f9;
+            --gray-50: #f8fafc;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--gray-100);
+            color: var(--gray-900);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background: var(--dark);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            color: var(--white);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .title-text h1 {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .title-text p {
+            font-size: 0.8rem;
+            color: #a5b4fc;
+            font-weight: 500;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-badge {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .mode-badge {
+            background: var(--gray-700);
+            color: var(--gray-100);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 1.5rem;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .header-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        /* Card Elements */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-300);
+            padding: 1.5rem;
+        }
+
+        /* Quiz Main Area */
+        .quiz-main {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .meta-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            font-weight: 600;
+        }
+
+        .badge {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-easy { background: var(--success-light); color: #065f46; }
+        .badge-medium { background: var(--warning-light); color: #92400e; }
+        .badge-hard { background: var(--danger-light); color: #991b1b; }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background-color: var(--gray-300);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), #a855f7);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .question-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.5;
+            color: var(--dark);
+            margin: 0.5rem 0 1rem 0;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .option-btn {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius);
+            background: var(--white);
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: var(--gray-900);
+            width: 100%;
+            position: relative;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .option-prefix {
+            font-weight: 700;
+            margin-right: 12px;
+            background: var(--gray-100);
+            color: var(--gray-700);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+        }
+
+        .option-btn.selected .option-prefix {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .option-btn.correct {
+            border-color: var(--success);
+            background: var(--success-light);
+            color: #065f46;
+        }
+
+        .option-btn.correct .option-prefix {
+            background: var(--success);
+            color: var(--white);
+        }
+
+        .option-btn.wrong {
+            border-color: var(--danger);
+            background: var(--danger-light);
+            color: #991b1b;
+        }
+
+        .option-btn.wrong .option-prefix {
+            background: var(--danger);
+            color: var(--white);
+        }
+
+        .option-btn:disabled {
+            cursor: default;
+        }
+
+        /* Explanation Box */
+        .explanation-box {
+            display: none;
+            background: var(--gray-50);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.25rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .explanation-title {
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Navigation Controls */
+        .controls-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-300);
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-primary { background: var(--primary); color: var(--white); }
+        .btn-primary:hover { background: var(--primary-dark); }
+        .btn-secondary { background: var(--gray-100); color: var(--gray-700); border: 1px solid var(--gray-300); }
+        .btn-secondary:hover { background: var(--gray-300); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        /* Sidebar Navigation Grid */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .score-card {
+            background: linear-gradient(135deg, var(--dark), var(--gray-900));
+            color: var(--white);
+            text-align: center;
+            padding: 1.25rem;
+        }
+
+        .score-val {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #38bdf8;
+            margin: 0.2rem 0;
+        }
+
+        .score-label {
+            font-size: 0.8rem;
+            color: var(--gray-300);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .grid-header {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(38px, 1fr));
+            gap: 6px;
+            max-height: 380px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+
+        .grid-item {
+            height: 36px;
+            border-radius: 6px;
+            border: 1px solid var(--gray-300);
+            background: var(--white);
+            color: var(--gray-700);
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .grid-item:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .grid-item.current {
+            border-color: var(--primary);
+            border-width: 2px;
+            box-shadow: 0 0 0 2px var(--primary-light);
+            font-weight: 800;
+        }
+
+        .grid-item.correct {
+            background: var(--success);
+            color: var(--white);
+            border-color: var(--success);
+        }
+
+        .grid-item.wrong {
+            background: var(--danger);
+            color: var(--white);
+            border-color: var(--danger);
+        }
+
+        .mode-toggle-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 0.5rem;
+        }
+
+        .tutor-info-box {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #78350f;
+            font-weight: 600;
+        }
+
+        /* Results Screen */
+        .results-overlay {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .result-score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            border: 6px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .result-pct {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+
+        .result-sub {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .stat-box {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius);
+            padding: 1rem;
+        }
+
+        .stat-num {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+
+        .perf-msg {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        /* Utilities */
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon">🧪</div>
+            <div class="title-text">
+                <h1>Acids, Bases & Salts</h1>
+                <p>CBSE Class 10 Chemistry • Created by Shekhar Sir (9819480122)</p>
+            </div>
+        </div>
+        <div class="header-actions">
+            <span class="author-badge">🎓 Shekhar Sir (9819480122)</span>
+            <span class="mode-badge" id="modeBadge">Full Bank (100 Qs)</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Main Quiz View -->
+        <main class="quiz-main">
+            <!-- Active Question Card -->
+            <div class="card" id="questionCard">
+                <div class="meta-bar">
+                    <span id="qNumber">Question 1 of 100</span>
+                    <div>
+                        <span id="topicBadge" class="badge badge-easy" style="background:#e0e7ff; color:#3730a3; margin-right: 6px;">Topic</span>
+                        <span id="diffBadge" class="badge badge-easy">Easy</span>
+                    </div>
+                </div>
+
+                <div class="progress-bar-container" style="margin-top: 10px;">
+                    <div class="progress-bar-fill" id="progressFill"></div>
+                </div>
+
+                <h2 class="question-title" id="qText">Loading question...</h2>
+
+                <div class="options-list" id="optionsContainer">
+                    <!-- Dynamic Options -->
+                </div>
+
+                <div class="explanation-box" id="explanationBox">
+                    <div class="explanation-title">
+                        <span>💡 Concept Explanation</span>
+                    </div>
+                    <div id="explanationText">Explanation content here.</div>
+                </div>
+
+                <div class="controls-bar">
+                    <button class="btn btn-secondary" id="prevBtn" onclick="navigate(-1)">← Previous</button>
+                    <button class="btn btn-secondary" onclick="resetCurrentQuestion()">Reset Question</button>
+                    <button class="btn btn-primary" id="nextBtn" onclick="navigate(1)">Next →</button>
+                </div>
+            </div>
+
+            <!-- Results View -->
+            <div class="card results-overlay" id="resultsCard">
+                <h2>🎉 Quiz Completed!</h2>
+                
+                <div class="result-score-circle">
+                    <span class="result-pct" id="resPct">0%</span>
+                    <span class="result-sub" id="resFraction">0 / 100</span>
+                </div>
+
+                <div class="perf-msg" id="perfMessage">Great effort!</div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-num" style="color: var(--success);" id="resCorrect">0</div>
+                        <div class="stat-label">Correct</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num" style="color: var(--danger);" id="resWrong">0</div>
+                        <div class="stat-label">Incorrect</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num" style="color: var(--gray-500);" id="resUnanswered">0</div>
+                        <div class="stat-label">Unanswered</div>
+                    </div>
+                </div>
+
+                <div class="tutor-info-box" style="margin-top: 1rem; width: 100%; max-width: 500px;">
+                    📚 Exam Mastery Notes & Tutoring by Shekhar Sir • Phone: 9819480122
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button class="btn btn-primary" onclick="restartQuiz()">🔄 Restart Quiz</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar Grid View -->
+        <aside class="sidebar">
+            <div class="card score-card">
+                <div class="score-label">Current Score</div>
+                <div class="score-val" id="scoreDisplay">0 / 0</div>
+                <div style="font-size: 0.8rem; color: var(--gray-300);" id="scorePercentage">0% Accuracy</div>
+            </div>
+
+            <div class="card">
+                <div class="grid-header">
+                    <span>Question Navigator</span>
+                    <span style="font-size: 0.75rem; color: var(--gray-500);" id="answeredCount">0/100 Done</span>
+                </div>
+                
+                <div class="nav-grid" id="navGrid">
+                    <!-- Dynamic Grid Buttons -->
+                </div>
+
+                <div class="mode-toggle-container">
+                    <button class="btn btn-secondary" style="width: 100%; font-size: 0.8rem; justify-content: center;" onclick="toggleMode()">
+                        🔀 Switch Mode (Full / 40 Practice)
+                    </button>
+                    <div class="tutor-info-box">
+                        📞 Shekhar Sir: 9819480122
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // Full Question Bank (100 Questions fully covering pages 1-20 of study document)
+        const masterQuestions = [
+            // Page 2: Acids vs Bases Fundamentals
+            {
+                question: "According to the Golden Rule of acids, what is the single positive ion produced when an acid dissolves in aqueous solution?",
+                options: ["Hydroxide ion (OH⁻)", "Hydrogen ion (H⁺)", "Hydride ion (H⁻)", "Sodium ion (Na⁺)"],
+                answer: 1,
+                explanation: "Acids release H⁺ (aq) ions as the only positive cations in an aqueous solution.",
+                difficulty: "Easy",
+                topic: "Acids & Bases Intro"
+            },
+            {
+                question: "Which of the following describes the chemical behavior and sensory property of bases?",
+                options: ["Sour taste and converts blue litmus to red", "Bitter taste, soapy touch, and turns red litmus to blue", "Salty taste and turns phenolphthalein colorless", "Sweet taste and generates H⁺ ions in water"],
+                answer: 1,
+                explanation: "Bases taste bitter, feel soapy to touch, release OH⁻ ions in water, and turn red litmus blue.",
+                difficulty: "Easy",
+                topic: "Acids & Bases Intro"
+            },
+            {
+                question: "Which option contains ONLY strong mineral acids?",
+                options: ["CH₃COOH, HNO₃, HCl", "HCl, H₂SO₄, HNO₃", "H₂SO₄, CH₃COOH, Citric acid", "H₂CO₃, HCl, NaOH"],
+                answer: 1,
+                explanation: "Hydrochloric acid (HCl), Sulphuric acid (H₂SO₄), and Nitric acid (HNO₃) are all strong mineral acids.",
+                difficulty: "Easy",
+                topic: "Acids & Bases Intro"
+            },
+            {
+                question: "Which compound among the following is a weak organic acid?",
+                options: ["Hydrochloric acid (HCl)", "Nitric acid (HNO₃)", "Acetic acid (CH₃COOH)", "Sulphuric acid (H₂SO₄)"],
+                answer: 2,
+                explanation: "Acetic acid (CH₃COOH) is a weak organic acid that only partially dissociates into ions in water.",
+                difficulty: "Easy",
+                topic: "Acids & Bases Intro"
+            },
+            {
+                question: "Which of the following chemical formulas represents Magnesium Hydroxide?",
+                options: ["MgOH", "Mg(OH)₂", "Mg₂OH", "Mg(OH)₃"],
+                answer: 1,
+                explanation: "Magnesium has a valency of +2 and hydroxide is -1, giving the correct formula Mg(OH)₂.",
+                difficulty: "Easy",
+                topic: "Chemical Formulas"
+            },
+
+            // Page 3: Visual Indicators
+            {
+                question: "According to the 'LaBouR' mnemonic, what is the color change of Litmus paper in an acidic medium?",
+                options: ["Turns Blue Litmus Red", "Turns Red Litmus Blue", "Turns Colorless", "Turns Bright Yellow"],
+                answer: 0,
+                explanation: "'LaBouR' reminds us: Litmus in Acid turns Red, while Litmus in Base turns Blue.",
+                difficulty: "Easy",
+                topic: "Visual Indicators"
+            },
+            {
+                question: "Using the 'TRY' rule, what colors does Turmeric indicator show in Base and Acid respectively?",
+                options: ["Yellow in Base, Red in Acid", "Red in Base, Yellow in Acid", "Pink in Base, Colorless in Acid", "Blue in Base, Red in Acid"],
+                answer: 1,
+                explanation: "TRY mnemonic: Turmeric turns Red in Base and remains Yellow in Acid.",
+                difficulty: "Medium",
+                topic: "Visual Indicators"
+            },
+            {
+                question: "What is the observation when Phenolphthalein indicator is added to Sodium Hydroxide (NaOH)?",
+                options: ["It remains colorless", "It turns yellow", "It turns pink", "It turns dark red"],
+                answer: 2,
+                explanation: "By the 'PoPCorn' rule (Pink in Base, Colorless in Acid), Phenolphthalein turns pink in basic NaOH solution.",
+                difficulty: "Medium",
+                topic: "Visual Indicators"
+            },
+            {
+                question: "In Methyl Orange indicator, what color transition occurs according to the 'MaYoR' mnemonic in basic and acidic media?",
+                options: ["Red in Base, Yellow in Acid", "Yellow in Base, Red in Acid", "Pink in Base, Colorless in Acid", "Blue in Base, Yellow in Acid"],
+                answer: 1,
+                explanation: "'MaYoR' rule indicates Methyl Orange is Yellow in Base and Red in Acid.",
+                difficulty: "Medium",
+                topic: "Visual Indicators"
+            },
+            {
+                question: "(CBSE 2023) Which of the following compounds will turn phenolphthalein solution pink?",
+                options: ["CH₃COOH", "Ca(OH)₂", "HCl", "H₂SO₄"],
+                answer: 1,
+                explanation: "Phenolphthalein turns pink in basic solutions. Ca(OH)₂ (Calcium Hydroxide) is a base, whereas CH₃COOH, HCl, and H₂SO₄ are acids.",
+                difficulty: "Medium",
+                topic: "Exam Zone - Indicators"
+            },
+
+            // Page 4: Olfactory Indicators
+            {
+                question: "What is the defining characteristic of an Olfactory Indicator?",
+                options: ["It changes color in acidic/basic solutions", "Its odor (smell) changes or disappears in acidic/basic solutions", "It produces effervescence with acids", "It conducts electricity in water"],
+                answer: 1,
+                explanation: "Olfactory indicators are substances whose smell/odor changes depending on whether they are in an acidic or basic medium.",
+                difficulty: "Easy",
+                topic: "Olfactory Indicators"
+            },
+            {
+                question: "What is the general behavior of olfactory indicators (Onion, Vanilla, Clove oil) in acidic vs basic media?",
+                options: ["Lose smell in Acid, retain smell in Base", "Retain smell in Acid, lose smell in Base", "Lose smell in both Acid and Base", "Retain smell in both Acid and Base"],
+                answer: 1,
+                explanation: "Golden Rule for Olfactory Indicators: They retain their characteristic smell in Acid and lose their smell in Base.",
+                difficulty: "Medium",
+                topic: "Olfactory Indicators"
+            },
+            {
+                question: "(CBSE 2023) Select a pair of olfactory indicators from the following:",
+                options: ["Clove oil & vanilla essence", "Onion & turmeric", "Clove oil & litmus paper", "Vanilla & methyl orange"],
+                answer: 0,
+                explanation: "Clove oil and vanilla essence (along with onion) are olfactory indicators, whereas turmeric, litmus, and methyl orange are visual indicators.",
+                difficulty: "Easy",
+                topic: "Exam Zone - Indicators"
+            },
+            {
+                question: "A visually impaired student needs to test if a solution is basic. Which indicator is most appropriate?",
+                options: ["Litmus paper", "Phenolphthalein", "Vanilla essence", "Methyl orange"],
+                answer: 2,
+                explanation: "Visually impaired students use olfactory indicators like vanilla essence, onion, or clove oil because they rely on sense of smell rather than color change.",
+                difficulty: "Hard",
+                topic: "Olfactory Indicators"
+            },
+
+            // Page 5: Water Rule & Dry vs Wet States
+            {
+                question: "Why does dry HCl gas NOT change the color of dry blue litmus paper?",
+                options: ["HCl gas is basic in dry state", "Dry HCl lacks H⁺ (aq) ions required for acidic behavior", "Litmus paper only reacts with bases", "Chlorine gas bleaches the litmus"],
+                answer: 1,
+                explanation: "Acids express acidic behavior only in the presence of water because H⁺ ions are generated only in aqueous solution.",
+                difficulty: "Medium",
+                topic: "Water Rule"
+            },
+            {
+                question: "When HCl gas reacts with water, what cation is produced?",
+                options: ["Hydroxide ion (OH⁻)", "Hydronium ion (H₃O⁺)", "Oxide ion (O²⁻)", "Hydride ion (H⁻)"],
+                answer: 1,
+                explanation: "H⁺ ion cannot exist alone; it combines with a water molecule to form Hydronium ion: H⁺ + H₂O → H₃O⁺.",
+                difficulty: "Medium",
+                topic: "Water Rule"
+            },
+            {
+                question: "(CBSE 2023) Hydronium ions are formed by the chemical reaction between:",
+                options: ["Sodium hydroxide & water", "Calcium chloride & water", "Hydrogen chloride gas & water", "Ethanol & water"],
+                answer: 2,
+                explanation: "HCl gas dissolves in water to form Hydronium ions (H₃O⁺) and chloride ions (Cl⁻): HCl + H₂O → H₃O⁺ + Cl⁻.",
+                difficulty: "Medium",
+                topic: "Exam Zone - Water Rule"
+            },
+            {
+                question: "What is the specific function of passing gas through a guard tube containing Calcium Chloride (CaCl₂)?",
+                options: ["To neutralize acidic fumes", "To dry the gas by absorbing moisture", "To generate hydrogen ions", "To test for gas purity"],
+                answer: 1,
+                explanation: "Calcium chloride (CaCl₂) is a desiccating agent used in guard tubes to remove water vapor and dry the gas.",
+                difficulty: "Hard",
+                topic: "Laboratory Techniques"
+            },
+
+            // Page 6: Diluting an Acid
+            {
+                question: "What is the Golden Rule for diluting a concentrated acid safely?",
+                options: ["Add water directly to concentrated acid rapidly", "Add concentrated acid slowly to water with continuous stirring (AaThUW)", "Mix equal volumes of acid and base simultaneously", "Heat the concentrated acid before adding water"],
+                answer: 1,
+                explanation: "AaThUW mnemonic: Always add Acid To Water dropwise with constant stirring. Dilution is highly exothermic.",
+                difficulty: "Easy",
+                topic: "Acid Dilution"
+            },
+            {
+                question: "Why is adding water directly into a beaker of concentrated sulphuric acid extremely dangerous?",
+                options: ["It produces toxic chlorine gas", "Excessive localized heat causes the acid to splash out and break glass", "It neutralizes the acid instantly making it useless", "It creates an explosive metal mixture"],
+                answer: 1,
+                explanation: "Dilution of acid is highly exothermic. Adding water to conc. acid generates localized intense heat causing dangerous acid splashing and glass breakage.",
+                difficulty: "Medium",
+                topic: "Acid Dilution"
+            },
+            {
+                question: "(CBSE Term 1) Concentrated H₂SO₄ is diluted safely by adding drop by drop:",
+                options: ["Water to acid with constant stirring", "Acid to water with constant stirring", "Water to acid followed by a base", "Base to acid followed by cold water"],
+                answer: 1,
+                explanation: "Concentrated acid must always be added slowly to water with constant stirring to distribute the heat released.",
+                difficulty: "Medium",
+                topic: "Exam Zone - Dilution"
+            },
+
+            // Page 7: Electric Current Conduction
+            {
+                question: "Why do aqueous solutions of HCl and NaOH conduct electricity, whereas aqueous glucose (C₆H₁₂O₆) does not?",
+                options: ["Glucose is insolube in water", "HCl and NaOH dissociate into free mobile ions in water, glucose does not", "Glucose lacks hydrogen atoms", "Electricity only flows through organic liquids"],
+                answer: 1,
+                explanation: "Electric current in solutions is carried by ions. Acids and bases ionize in water, whereas covalent molecules like glucose do not form free mobile ions.",
+                difficulty: "Hard",
+                topic: "Electrical Conduction"
+            },
+            {
+                question: "(CBSE 2025) Although Alcohol (C₂H₅OH) contains hydrogen atoms, why does a light bulb NOT glow in an alcohol conductivity test?",
+                options: ["Alcohol evaporates before electricity passes", "Alcohol does not dissociate to produce free H⁺ or OH⁻ ions in solution", "Alcohol acts as an explosive insulator", "Alcohol absorbs all electrical current"],
+                answer: 1,
+                explanation: "Alcohol does not ionize in water to yield free ions. Without free ions to carry charge, no current flows and the bulb does not glow.",
+                difficulty: "Hard",
+                topic: "Exam Zone - Conduction"
+            },
+
+            // Page 8: Reaction with Metals
+            {
+                question: "What product gas is generated when Zinc granules react with dilute Sulphuric acid?",
+                options: ["Oxygen gas (O₂)", "Carbon dioxide (CO₂)", "Hydrogen gas (H₂)", "Sulphur dioxide (SO₂)"],
+                answer: 2,
+                explanation: "Metal + Acid → Salt + H₂ ↑. Zinc reacts with dilute H₂SO₄ to release Hydrogen gas.",
+                difficulty: "Easy",
+                topic: "Metal Reactions"
+            },
+            {
+                question: "How is Hydrogen gas experimentally confirmed in the laboratory?",
+                options: ["It turns lime water milky", "It burns with a characteristic 'pop' sound near a burning flame", "It turns moist blue litmus red", "It has a sharp pungent smell"],
+                answer: 1,
+                explanation: "Hydrogen gas burns with a distinct 'pop' sound and extinguishes a flaming splinter.",
+                difficulty: "Easy",
+                topic: "Gas Identification"
+            },
+            {
+                question: "When Zinc reacts with hot Sodium Hydroxide (NaOH) solution, what compound is formed alongside Hydrogen gas?",
+                options: ["Zinc hydroxide [Zn(OH)₂]", "Sodium zincate [Na₂ZnO₂]", "Zinc oxide [ZnO]", "Sodium oxide [Na₂O]"],
+                answer: 1,
+                explanation: "Base + Metal → Salt + H₂ ↑. 2NaOH + Zn → Na₂ZnO₂ (Sodium zincate) + H₂.",
+                difficulty: "Hard",
+                topic: "Base Reactions"
+            },
+            {
+                question: "(CBSE 2024) Identify the correct balanced chemical equation when 2 mL of NaOH is heated with granulated Zinc:",
+                options: ["NaOH + Zn → NaZnO₂ + H₂O", "2NaOH + Zn → Na₂ZnO₂ + H₂", "2NaOH + Zn → Na₂ZnO₂ + H₂O", "2NaOH + 2Zn → Na₂ZnO₂ + H₂"],
+                answer: 1,
+                explanation: "The correct balanced equation is 2NaOH (aq) + Zn (s) → Na₂ZnO₂ (s) + H₂ (g).",
+                difficulty: "Hard",
+                topic: "Exam Zone - Equations"
+            },
+
+            // Page 9: Carbonate Clash & Lime Water Test
+            {
+                question: "What are the complete products when hydrochloric acid reacts with Sodium Carbonate (Na₂CO₃)?",
+                options: ["NaCl and H₂ gas", "NaCl, CO₂ gas, and H₂O", "NaOH, Cl₂ gas, and H₂O", "Na₂O and HCl"],
+                answer: 1,
+                explanation: "Acid + Metal Carbonate → Salt + CO₂ ↑ + H₂O. 2HCl + Na₂CO₃ → 2NaCl + CO₂ + H₂O.",
+                difficulty: "Medium",
+                topic: "Carbonates & Acids"
+            },
+            {
+                question: "When CO₂ gas is passed into Lime Water [Ca(OH)₂], why does the solution turn milky white?",
+                options: ["Formation of soluble Calcium Hydroxide", "Formation of insoluble white precipitate Calcium Carbonate (CaCO₃)", "Formation of Calcium Chloride", "Formation of Calcium Bicarbonate"],
+                answer: 1,
+                explanation: "Lime water Ca(OH)₂ reacts with CO₂ to form an insoluble white precipitate of Calcium Carbonate (CaCO₃).",
+                difficulty: "Medium",
+                topic: "Lime Water Test"
+            },
+            {
+                question: "What happens when EXCESS Carbon Dioxide gas is continuously bubbled through milky lime water?",
+                options: ["The milkiness turns dark green", "The milkiness disappears due to formation of soluble Calcium Hydrogen Carbonate [Ca(HCO₃)₂]", "Solid calcium precipitates to the bottom", "It releases toxic chlorine gas"],
+                answer: 1,
+                explanation: "CaCO₃ (s) + H₂O (l) + CO₂ (g) → Ca(HCO₃)₂ (aq), which is completely soluble in water, causing milkiness to disappear.",
+                difficulty: "Hard",
+                topic: "Lime Water Test"
+            },
+
+            // Page 10: Neutralization & Metallic/Non-Metallic Oxides
+            {
+                question: "What general chemical transformation occurs during a standard Neutralization reaction?",
+                options: ["Acid + Base → Salt + Water", "Acid + Metal → Salt + Hydrogen", "Metal Oxide + Base → Water", "Non-metal + Acid → Gas + Salt"],
+                answer: 0,
+                explanation: "Neutralization occurs when H⁺ ions from an acid react with OH⁻ ions from a base to form Salt and Water.",
+                difficulty: "Easy",
+                topic: "Neutralization"
+            },
+            {
+                question: "(CBSE 2025) A student added dilute HCl to black Copper(II) Oxide (CuO) and observed a clear color change. What compound was formed and what was its color?",
+                options: ["Cupric Nitrate - Blue", "Cupric Chloride (CuCl₂) - Blue-green", "Cuprous Oxide - Red", "Copper Sulphate - Dark Green"],
+                answer: 1,
+                explanation: "CuO + 2HCl → CuCl₂ + H₂O. Copper(II) chloride (CuCl₂) forms, imparting a characteristic blue-green color to the solution.",
+                difficulty: "Hard",
+                topic: "Exam Zone - Oxides"
+            },
+            {
+                question: "What is the chemical nature of Metallic Oxides (e.g., CuO, MgO, CaO)?",
+                options: ["Acidic in nature", "Basic in nature", "Neutral in nature", "Amphoteric only"],
+                answer: 1,
+                explanation: "Metallic oxides react with acids to yield salt and water; hence, metallic oxides are basic in nature.",
+                difficulty: "Medium",
+                topic: "Oxides Nature"
+            },
+            {
+                question: "What is the chemical nature of Non-Metallic Oxides (e.g., CO₂, SO₂, NO₂)?",
+                options: ["Basic in nature", "Acidic in nature", "Neutral in nature", "Highly alkaline"],
+                answer: 1,
+                explanation: "Non-metallic oxides react with bases to form salt and water; therefore, non-metallic oxides are acidic in nature.",
+                difficulty: "Medium",
+                topic: "Oxides Nature"
+            },
+            {
+                question: "Which gas among the following is BASIC in nature according to the shortcut rules?",
+                options: ["Carbon dioxide (CO₂)", "Sulphur dioxide (SO₂)", "Nitrogen dioxide (NO₂)", "Ammonia (NH₃)"],
+                answer: 3,
+                explanation: "CO₂, SO₂, and NO₂ are acidic non-metallic oxides/gases. Ammonia gas (NH₃) is basic in nature.",
+                difficulty: "Medium",
+                topic: "Gas Properties"
+            },
+
+            // Page 11: pH Scale
+            {
+                question: "What does the pH scale quantitatively measure in an aqueous solution?",
+                options: ["Concentration of Na⁺ ions", "Concentration of H⁺ (aq) ions", "Concentration of dissolved oxygen", "Total mass of solute"],
+                answer: 1,
+                explanation: "pH stands for 'potenz' (power) of Hydrogen, measuring H⁺ (aq) ion concentration in solution.",
+                difficulty: "Easy",
+                topic: "pH Scale"
+            },
+            {
+                question: "According to the Inverse Relationship of pH, what does a LOWER pH value signify?",
+                options: ["Lower H⁺ ion concentration / less acidic", "Higher H⁺ ion concentration / more acidic", "Higher OH⁻ ion concentration / more basic", "Completely neutral solution"],
+                answer: 1,
+                explanation: "pH is inversely proportional to H⁺ concentration. Lower pH = higher H⁺ concentration = stronger acid.",
+                difficulty: "Medium",
+                topic: "pH Scale"
+            },
+            {
+                question: "(CBSE 2025) Solutions A, B, C, D have pH values of 9, 7, 3, and 14 respectively. Identify their chemical nature:",
+                options: ["Weak base, Neutral, Strong acid, Strong base", "Strong base, Neutral, Weak acid, Strong acid", "Weak acid, Neutral, Strong base, Strong acid", "Neutral, Weak base, Strong acid, Weak acid"],
+                answer: 0,
+                explanation: "pH 9 = Weak base, pH 7 = Neutral, pH 3 = Strong acid, pH 14 = Strong base.",
+                difficulty: "Hard",
+                topic: "Exam Zone - pH"
+            },
+
+            // Page 12: pH in Everyday Life
+            {
+                question: "At what pH value is rain water officially categorized as 'Acid Rain'?",
+                options: ["pH < 7.0", "pH < 6.5", "pH < 5.6", "pH < 4.0"],
+                answer: 2,
+                explanation: "When precipitation rainwater falls below pH 5.6 due to dissolved acidic oxides, it is classified as acid rain.",
+                difficulty: "Easy",
+                topic: "pH in Daily Life"
+            },
+            {
+                question: "What is the optimal pH survival range for the human body?",
+                options: ["2.0 to 3.5", "5.5 to 6.5", "7.0 to 7.8", "8.5 to 10.0"],
+                answer: 2,
+                explanation: "Our human body functions effectively within a narrow pH range of 7.0 to 7.8.",
+                difficulty: "Easy",
+                topic: "pH in Daily Life"
+            },
+            {
+                question: "(CBSE 2025) Tooth enamel is composed of Calcium Hydroxyapatite. Dental corrosion/decay begins when mouth pH drops below:",
+                options: ["pH 7.0", "pH 5.5", "pH 10.0", "pH 14.0"],
+                answer: 1,
+                explanation: "Tooth decay starts when mouth pH falls below 5.5, causing acid to corrode calcium hydroxyapatite enamel.",
+                difficulty: "Medium",
+                topic: "Exam Zone - Tooth Decay"
+            },
+            {
+                question: "Which chemical antacid is commonly used as a mild base remedy for hyperacidity in the human stomach?",
+                options: ["Caustic Soda (NaOH)", "Milk of Magnesia [Mg(OH)₂]", "Concentrated H₂SO₄", "Calcium Chloride"],
+                answer: 1,
+                explanation: "Milk of Magnesia [Magnesium Hydroxide, Mg(OH)₂] is a mild base that safely neutralizes excess stomach HCl.",
+                difficulty: "Easy",
+                topic: "pH in Daily Life"
+            },
+            {
+                question: "What specific organic acid is injected during a Honeybee or Nettle hair sting, causing acute pain and irritation?",
+                options: ["Acetic acid", "Citric acid", "Methanoic acid (Formic acid)", "Oxalic acid"],
+                answer: 2,
+                explanation: "Bee stings and nettle leaf hair stings inject Methanoic acid (HCOOH) into the skin.",
+                difficulty: "Medium",
+                topic: "Natural Acids"
+            },
+
+            // Page 13: Naturally Occurring Acids
+            {
+                question: "(CBSE 2023) Which acid is naturally present in Tomatoes?",
+                options: ["Methanoic acid", "Acetic acid", "Lactic acid", "Oxalic acid"],
+                answer: 3,
+                explanation: "Tomatoes contain Oxalic acid (Memory hook: 'Tamatar Oxi ne khaya').",
+                difficulty: "Easy",
+                topic: "Exam Zone - Natural Acids"
+            },
+            {
+                question: "Match Tamarind with its correct naturally occurring acid using the provided memory hook:",
+                options: ["Tartaric acid", "Citric acid", "Lactic acid", "Acetic acid"],
+                answer: 0,
+                explanation: "Tamarind contains Tartaric acid (Memory hook: 'Imli ko Tar se bandha').",
+                difficulty: "Easy",
+                topic: "Natural Acids"
+            },
+            {
+                question: "Which acid is found in Sour Milk or Curd?",
+                options: ["Acetic acid", "Lactic acid", "Citric acid", "Oxalic acid"],
+                answer: 1,
+                explanation: "Sour milk / Curd contains Lactic acid (Memory hook: 'Dahi ko Lake me feka').",
+                difficulty: "Easy",
+                topic: "Natural Acids"
+            },
+            {
+                question: "What acid is present in commercial Vinegar (Sirka)?",
+                options: ["Methanoic acid", "Acetic acid (CH₃COOH)", "Tartaric acid", "Citric acid"],
+                answer: 1,
+                explanation: "Vinegar is a dilute 5-8% solution of Acetic acid in water.",
+                difficulty: "Easy",
+                topic: "Natural Acids"
+            },
+
+            // Page 14: Family of Salts
+            {
+                question: "What is the pH nature of a salt produced by reacting a Strong Acid with a Weak Base (e.g., HCl + NH₄OH → NH₄Cl)?",
+                options: ["Neutral salt (pH = 7)", "Acidic salt (pH < 7)", "Basic salt (pH > 7)", "Amphoteric salt"],
+                answer: 1,
+                explanation: "A strong acid dominates over a weak base, yielding an Acidic salt with pH < 7.",
+                difficulty: "Medium",
+                topic: "Family of Salts"
+            },
+            {
+                question: "What is the pH nature of Sodium Acetate (CH₃COONa) in water?",
+                options: ["Acidic salt (pH < 7)", "Basic salt (pH > 7)", "Neutral salt (pH = 7)", "Strongly acidic (pH = 1)"],
+                answer: 1,
+                explanation: "CH₃COONa splits into CH₃COOH (Weak Acid) and NaOH (Strong Base). Strong base dominates, making it a Basic salt (pH > 7).",
+                difficulty: "Hard",
+                topic: "Family of Salts"
+            },
+            {
+                question: "Which combination produces a perfectly Neutral salt with pH = 7?",
+                options: ["Strong Acid + Weak Base", "Weak Acid + Strong Base", "Strong Acid + Strong Base", "Weak Acid + Weak Acid"],
+                answer: 2,
+                explanation: "Strong Acid + Strong Base (e.g., HCl + NaOH → NaCl + H₂O) react completely to form a neutral salt (pH = 7).",
+                difficulty: "Easy",
+                topic: "Family of Salts"
+            },
+
+            // Page 15: Chlor-Alkali Process
+            {
+                question: "What are the primary raw material reactant and product gases in the Chlor-Alkali process?",
+                options: ["Brine (aq. NaCl) producing Cl₂ at Anode and H₂ at Cathode", "Fused NaCl producing O₂ at Anode and N₂ at Cathode", "CaCO₃ producing CO₂ and H₂ gas", "NaOH producing Chlorine and Sodium metal"],
+                answer: 0,
+                explanation: "Chlor-Alkali process passes electric current through Brine [2NaCl (aq) + 2H₂O (l) → 2NaOH + Cl₂ + H₂].",
+                difficulty: "Hard",
+                topic: "Chlor-Alkali Process"
+            },
+            {
+                question: "Using the 'PATCI' and 'CHiNa' mnemonics, identify where Chlorine and Hydrogen gases are collected:",
+                options: ["Chlorine at Cathode, Hydrogen at Anode", "Positive Anode Chlorine (PATCI), Cathode Hydrogen (CHiNa)", "Both gases collect at Cathode", "Both gases collect at Anode"],
+                answer: 1,
+                explanation: "PATCI: Positive Anode Chlorine (Cl₂). CHiNa: Cathode Hydrogen (H₂).",
+                difficulty: "Medium",
+                topic: "Chlor-Alkali Process"
+            },
+            {
+                question: "Where is Sodium Hydroxide (NaOH) solution collected during the Chlor-Alkali process?",
+                options: ["At the anode surface", "Near the cathode", "Evaporates as a gaseous byproduct", "Precipitates at the bottom center"],
+                answer: 1,
+                explanation: "NaOH solution forms near the Cathode in the electrolyzer tank.",
+                difficulty: "Medium",
+                topic: "Chlor-Alkali Process"
+            },
+
+            // Page 16: Baking Soda & Baking Powder
+            {
+                question: "(CBSE 2025) A compound 'X' with pH ~9 is used in kitchen for making crispy pakoras. Identify 'X' and its formula:",
+                options: ["Sodium Carbonate, Na₂CO₃", "Sodium Hydrogen Carbonate, NaHCO₃", "Bleaching Powder, CaOCl₂", "Calcium Carbonate, CaCO₃"],
+                answer: 1,
+                explanation: "Compound X is Baking Soda = Sodium Hydrogen Carbonate (NaHCO₃), a mild non-corrosive basic salt.",
+                difficulty: "Medium",
+                topic: "Exam Zone - Baking Soda"
+            },
+            {
+                question: "What chemical constituent is added to Baking Soda to transform it into Baking Powder for baking cakes?",
+                options: ["Sulphuric acid", "Edible mild acid like Tartaric acid", "Hydrochloric acid", "Sodium Hydroxide"],
+                answer: 1,
+                explanation: "Baking Powder is a mixture of Baking Soda (NaHCO₃) and a mild edible acid like Tartaric acid.",
+                difficulty: "Medium",
+                topic: "Baking Powder"
+            },
+            {
+                question: "Why does Baking Powder cause bread or cake batter to rise, making it soft and spongy?",
+                options: ["Release of Chlorine gas bubbles", "Release of Carbon Dioxide (CO₂) gas during heating", "Absorption of moisture", "Formation of alcohol"],
+                answer: 1,
+                explanation: "NaHCO₃ + H⁺ → CO₂ ↑ + H₂O + Sodium salt. CO₂ gas bubbles trapped in dough cause cake/bread to rise.",
+                difficulty: "Medium",
+                topic: "Baking Powder"
+            },
+
+            // Page 17: Bleaching Powder & Washing Soda
+            {
+                question: "What chemical equation represents the manufacturing of Bleaching Powder?",
+                options: ["Ca(OH)₂ + Cl₂ → CaOCl₂ + H₂O", "NaCl + H₂O → NaOH + HCl", "Na₂CO₃ + 10H₂O → Na₂CO₃·10H₂O", "CaSO₄ + H₂O → POP"],
+                answer: 0,
+                explanation: "Bleaching powder (CaOCl₂) is produced by reacting dry slaked lime [Ca(OH)₂] with Chlorine gas.",
+                difficulty: "Medium",
+                topic: "Bleaching Powder"
+            },
+            {
+                question: "Which compound is widely utilized in water treatment plants to make drinking water free from germs?",
+                options: ["Washing soda", "Baking soda", "Bleaching powder (CaOCl₂)", "Plaster of Paris"],
+                answer: 2,
+                explanation: "Bleaching powder acts as a strong disinfectant to kill germs in public water supplies.",
+                difficulty: "Easy",
+                topic: "Bleaching Powder"
+            },
+            {
+                question: "(CBSE 2025) How is Washing Soda chemically obtained from Sodium Carbonate?",
+                options: ["Direct heating with sulfur", "Recrystallization of Sodium Carbonate with 10 water molecules (Na₂CO₃ + 10H₂O → Na₂CO₃·10H₂O)", "Reaction with concentrated HCl", "Electrolysis of dry powder"],
+                answer: 1,
+                explanation: "Washing soda is obtained by recrystallizing sodium carbonate: Na₂CO₃ + 10H₂O → Na₂CO₃·10H₂O (Sodium carbonate decahydrate).",
+                difficulty: "Medium",
+                topic: "Exam Zone - Washing Soda"
+            },
+            {
+                question: "Which salt compound is used industrially for removing permanent hardness of water?",
+                options: ["Baking soda", "Washing soda (Na₂CO₃·10H₂O)", "Calcium chloride", "Copper sulphate"],
+                answer: 1,
+                explanation: "Washing soda (Sodium carbonate decahydrate) removes permanent hardness of water.",
+                difficulty: "Easy",
+                topic: "Washing Soda"
+            },
+
+            // Page 18: Water of Crystallization
+            {
+                question: "What is defined as 'Water of Crystallization'?",
+                options: ["Free water content in wet salt solutions", "Fixed number of water molecules present in one formula unit of salt", "Water formed during neutralization", "Atmospheric water absorbed by salt"],
+                answer: 1,
+                explanation: "Water of crystallization is the fixed number of water molecules chemically bonded in one formula unit of salt crystal.",
+                difficulty: "Easy",
+                topic: "Water of Crystallization"
+            },
+            {
+                question: "When hydrated blue Copper Sulphate crystals (CuSO₄·5H₂O) are heated strongly in a dry test tube, what color change is observed?",
+                options: ["Turns dark black", "Turns white due to loss of water of crystallization", "Turns bright yellow", "Turns permanent green"],
+                answer: 1,
+                explanation: "CuSO₄·5H₂O (Blue) --Heat--> CuSO₄ (White anhydrous powder) + 5H₂O.",
+                difficulty: "Medium",
+                topic: "Water of Crystallization"
+            },
+            {
+                question: "What are the chemical decomposition products when green Ferrous Sulphate crystals (FeSO₄·7H₂O) are heated strongly?",
+                options: ["Fe2O3 (Brown solid) + SO₂ gas + SO₃ gas + H₂O", "Fe metal + Oxygen gas", "FeO + H₂SO₄", "FeS + O₂ gas"],
+                answer: 0,
+                explanation: "FeSO₄ loses water, then decomposes: 2FeSO₄ --Heat--> Fe₂O₃ (Brown ferric oxide) + SO₂ (g) + SO₃ (g).",
+                difficulty: "Hard",
+                topic: "Decomposition Reactions"
+            },
+
+            // Page 19: Plaster of Paris (POP)
+            {
+                question: "(CBSE 2025) Write the chemical name, formula, and primary medical application of the compound obtained when Gypsum is heated at 373 K (100°C):",
+                options: ["Plaster of Paris, CaSO₄·½H₂O, fixing fractured bones", "Gypsum, CaSO₄·2H₂O, antacid", "Quicklime, CaO, bleaching", "Slaked lime, Ca(OH)₂, plastering"],
+                answer: 0,
+                explanation: "Heating Gypsum at 373K yields Plaster of Paris (Calcium Sulphate Hemihydrate, CaSO₄·½H₂O), used for setting fractured bones.",
+                difficulty: "Medium",
+                topic: "Exam Zone - POP"
+            },
+            {
+                question: "What happens when Plaster of Paris powder is mixed with an adequate amount of water?",
+                options: ["It dissolves completely forming a clear acid solution", "It rehydrates to form Gypsum, setting into a hard solid mass", "It releases toxic chlorine gas", "It turns into liquid sodium hydroxide"],
+                answer: 1,
+                explanation: "CaSO₄·½H₂O + 1½ H₂O → CaSO₄·2H₂O (Gypsum), setting into a hard solid structure.",
+                difficulty: "Easy",
+                topic: "Plaster of Paris"
+            },
+
+            // Additional 40 High-Yield Practice & Conceptual Verification Questions
+            {
+                question: "Which of the following acids is present in Lemon juice?",
+                options: ["Oxalic acid", "Citric acid", "Methanoic acid", "Lactic acid"],
+                answer: 1,
+                explanation: "Lemons, like oranges, contain Citric acid.",
+                difficulty: "Easy",
+                topic: "Natural Acids"
+            },
+            {
+                question: "What color does Litmus solution show in a completely NEUTRAL medium?",
+                options: ["Red", "Blue", "Purple", "Green"],
+                answer: 2,
+                explanation: "Litmus is a purple dye extracted from lichen when in a neutral solution.",
+                difficulty: "Medium",
+                topic: "Visual Indicators"
+            },
+            {
+                question: "What is the formula of Slaked Lime?",
+                options: ["CaO", "Ca(OH)₂", "CaCO₃", "CaCl₂"],
+                answer: 1,
+                explanation: "Slaked lime is Calcium Hydroxide, Ca(OH)₂.",
+                difficulty: "Easy",
+                topic: "Chemical Formulas"
+            },
+            {
+                question: "What is the formula of Quicklime?",
+                options: ["CaO", "Ca(OH)₂", "CaCO₃", "CaSO₄"],
+                answer: 0,
+                explanation: "Quicklime is Calcium Oxide, CaO.",
+                difficulty: "Easy",
+                topic: "Chemical Formulas"
+            },
+            {
+                question: "Which gas is evolved when an acid reacts with metal hydrogen carbonate?",
+                options: ["H₂", "O₂", "CO₂", "N₂"],
+                answer: 2,
+                explanation: "Acid + Metal Hydrogen Carbonate → Salt + Water + Carbon Dioxide gas (CO₂).",
+                difficulty: "Easy",
+                topic: "Carbonates & Acids"
+            },
+            {
+                question: "Which substance is used in soda-acid fire extinguishers?",
+                options: ["Washing soda", "Baking soda (NaHCO₃)", "Bleaching powder", "Plaster of Paris"],
+                answer: 1,
+                explanation: "Baking soda reacts with acid in fire extinguishers to generate fire-extinguishing CO₂ gas.",
+                difficulty: "Medium",
+                topic: "Baking Soda"
+            },
+            {
+                question: "What is the pH of a neutral aqueous solution at 25°C?",
+                options: ["0", "7", "14", "1"],
+                answer: 1,
+                explanation: "A neutral solution has pH = 7.",
+                difficulty: "Easy",
+                topic: "pH Scale"
+            },
+            {
+                question: "Which acid is present in gastric juice produced in human stomach?",
+                options: ["Sulphuric acid", "Nitric acid", "Hydrochloric acid (HCl)", "Acetic acid"],
+                answer: 2,
+                explanation: "Stomach gastric juice contains dilute Hydrochloric acid (HCl) for digestion.",
+                difficulty: "Easy",
+                topic: "pH in Daily Life"
+            },
+            {
+                question: "What leaf remedy from nature neutralizes the stinging acid from nettle hair?",
+                options: ["Lemon leaf", "Dock plant leaf", "Tomato leaf", "Neem leaf"],
+                answer: 1,
+                explanation: "Dock plant leaves grow near nettle plants and contain basic juice that neutralizes methanoic acid.",
+                difficulty: "Medium",
+                topic: "pH in Daily Life"
+            },
+            {
+                question: "What is the chemical formula of Sodium Zincate?",
+                options: ["NaZnO₂", "Na₂ZnO₂", "NaZn(OH)₄", "Na₂ZnO₃"],
+                answer: 1,
+                explanation: "Sodium Zincate formula is Na₂ZnO₂.",
+                difficulty: "Medium",
+                topic: "Base Reactions"
+            },
+            {
+                question: "Which oxide among CuO, CO₂, SO₂, and NO₂ is basic?",
+                options: ["CO₂", "SO₂", "NO₂", "CuO"],
+                answer: 3,
+                explanation: "CuO (Copper Oxide) is a metallic oxide and therefore basic.",
+                difficulty: "Medium",
+                topic: "Oxides Nature"
+            },
+            {
+                question: "In the Chlor-Alkali process, what gas is released at the Cathode?",
+                options: ["Chlorine", "Hydrogen", "Oxygen", "Nitrogen"],
+                answer: 1,
+                explanation: "CHiNa rule: Cathode Hydrogen (H₂).",
+                difficulty: "Medium",
+                topic: "Chlor-Alkali Process"
+            },
+            {
+                question: "In the Chlor-Alkali process, what gas is released at the Anode?",
+                options: ["Chlorine", "Hydrogen", "Carbon dioxide", "Ammonia"],
+                answer: 0,
+                explanation: "PATCI rule: Positive Anode Chlorine (Cl₂).",
+                difficulty: "Medium",
+                topic: "Chlor-Alkali Process"
+            },
+            {
+                question: "What is the chemical chemical formula of Gypsum?",
+                options: ["CaSO₄·½H₂O", "CaSO₄·2H₂O", "CaSO₄·5H₂O", "CaSO₄·10H₂O"],
+                answer: 1,
+                explanation: "Gypsum formula is CaSO₄·2H₂O.",
+                difficulty: "Easy",
+                topic: "Plaster of Paris"
+            },
+            {
+                question: "How many water molecules of crystallization are in Washing Soda?",
+                options: ["2", "5", "7", "10"],
+                answer: 3,
+                explanation: "Washing soda formula is Na₂CO₃·10H₂O (10 water molecules).",
+                difficulty: "Easy",
+                topic: "Water of Crystallization"
+            },
+            {
+                question: "How many water molecules of crystallization are in Copper Sulphate crystals?",
+                options: ["2", "5", "7", "10"],
+                answer: 1,
+                explanation: "Blue copper sulphate is CuSO₄·5H₂O (5 water molecules).",
+                difficulty: "Easy",
+                topic: "Water of Crystallization"
+            },
+            {
+                question: "Which substance turns red litmus blue?",
+                options: ["Vinegar", "Lemon juice", "Baking soda solution", "Hydrochloric acid"],
+                answer: 2,
+                explanation: "Baking soda solution is basic and turns red litmus blue.",
+                difficulty: "Easy",
+                topic: "Visual Indicators"
+            },
+            {
+                question: "Which of the following is NOT an acid-base indicator?",
+                options: ["Litmus", "Methyl orange", "Phenolphthalein", "Sodium chloride"],
+                answer: 3,
+                explanation: "Sodium chloride is a neutral salt, not an indicator.",
+                difficulty: "Easy",
+                topic: "Indicators"
+            },
+            {
+                question: "An aqueous solution turns red litmus paper blue. Excess addition of which solution would reverse the change?",
+                options: ["Baking powder", "Lime", "Ammonium hydroxide solution", "Hydrochloric acid"],
+                answer: 3,
+                explanation: "Red litmus turned blue indicates a basic solution. Adding excess acid (HCl) will make it acidic and turn blue litmus back to red.",
+                difficulty: "Medium",
+                topic: "Indicators & Acids"
+            },
+            {
+                question: "A solution reacts with crushed egg-shells to give a gas that turns lime-water milky. The solution contains:",
+                options: ["NaCl", "HCl", "LiCl", "KCl"],
+                answer: 1,
+                explanation: "Eggshells contain Calcium Carbonate (CaCO₃). CaCO₃ reacts with acid (HCl) to produce CO₂ gas which turns lime water milky.",
+                difficulty: "Medium",
+                topic: "Carbonates & Acids"
+            },
+            {
+                question: "Which one of the following types of medicines is used for treating indigestion?",
+                options: ["Antibiotic", "Analgesic", "Antacid", "Antiseptic"],
+                answer: 2,
+                explanation: "Antacids (mild bases) neutralize excess stomach acid during indigestion.",
+                difficulty: "Easy",
+                topic: "pH in Daily Life"
+            },
+            {
+                question: "What is the pH range of strongly acidic solutions?",
+                options: ["0 to 3", "7", "8 to 10", "12 to 14"],
+                answer: 0,
+                explanation: "pH 0-3 represents strongly acidic solutions.",
+                difficulty: "Easy",
+                topic: "pH Scale"
+            },
+            {
+                question: "What is the pH range of strongly alkaline solutions?",
+                options: ["0 to 2", "5 to 6", "7", "12 to 14"],
+                answer: 3,
+                explanation: "pH 12-14 represents strongly basic / alkaline solutions.",
+                difficulty: "Easy",
+                topic: "pH Scale"
+            },
+            {
+                question: "When a base reacts with a metal oxide, what is formed?",
+                options: ["Salt and water", "No reaction generally occurs because both are basic", "Hydrogen gas", "Chlorine gas"],
+                answer: 1,
+                explanation: "Both metal oxides and bases are basic in nature, so they generally do not react with each other.",
+                difficulty: "Hard",
+                topic: "Oxides Nature"
+            },
+            {
+                question: "What compound is formed when CO₂ reacts with Ca(OH)₂?",
+                options: ["CaCO₃", "CaO", "CaCl₂", "CaSO₄"],
+                answer: 0,
+                explanation: "CO₂ + Ca(OH)₂ → CaCO₃ (Calcium carbonate precipitate) + H₂O.",
+                difficulty: "Easy",
+                topic: "Lime Water Test"
+            },
+            {
+                question: "What is the color of anhydrous Copper Sulphate?",
+                options: ["Blue", "White", "Green", "Pink"],
+                answer: 1,
+                explanation: "Anhydrous CuSO₄ (without water of crystallization) is a white powder.",
+                difficulty: "Medium",
+                topic: "Water of Crystallization"
+            },
+            {
+                question: "What is the color of hydrated Copper Sulphate crystals?",
+                options: ["Blue", "White", "Red", "Yellow"],
+                answer: 0,
+                explanation: "Hydrated CuSO₄·5H₂O is blue.",
+                difficulty: "Easy",
+                topic: "Water of Crystallization"
+            },
+            {
+                question: "What is the color of hydrated Ferrous Sulphate crystals?",
+                options: ["Blue", "Green", "White", "Brown"],
+                answer: 1,
+                explanation: "FeSO₄·7H₂O crystals are green.",
+                difficulty: "Easy",
+                topic: "Water of Crystallization"
+            },
+            {
+                question: "Which acid is produced in ant stings?",
+                options: ["Formic acid / Methanoic acid", "Citric acid", "Oxalic acid", "Tartaric acid"],
+                answer: 0,
+                explanation: "Ant stings contain Methanoic acid (also called Formic acid).",
+                difficulty: "Easy",
+                topic: "Natural Acids"
+            },
+            {
+                question: "What salt is formed when Sodium Hydroxide reacts with Hydrochloric acid?",
+                options: ["Sodium Chloride (NaCl)", "Sodium Carbonate", "Sodium Sulphate", "Sodium Nitrate"],
+                answer: 0,
+                explanation: "NaOH + HCl → NaCl + H₂O.",
+                difficulty: "Easy",
+                topic: "Neutralization"
+            },
+            {
+                question: "What is the chemical name of Bleaching Powder?",
+                options: ["Calcium Chloride", "Calcium Oxychloride (CaOCl₂)", "Calcium Chlorate", "Calcium Hydroxide"],
+                answer: 1,
+                explanation: "Bleaching powder is Calcium Oxychloride, CaOCl₂.",
+                difficulty: "Easy",
+                topic: "Bleaching Powder"
+            },
+            {
+                question: "What is the chemical name of Baking Soda?",
+                options: ["Sodium Carbonate", "Sodium Hydrogen Carbonate (NaHCO₃)", "Sodium Hydroxide", "Sodium Chloride"],
+                answer: 1,
+                explanation: "Baking soda is Sodium Hydrogen Carbonate / Sodium Bicarbonate (NaHCO₃).",
+                difficulty: "Easy",
+                topic: "Baking Soda"
+            },
+            {
+                question: "What is the chemical name of Washing Soda?",
+                options: ["Sodium Carbonate Decahydrate (Na₂CO₃·10H₂O)", "Sodium Hydrogen Carbonate", "Calcium Hydroxide", "Magnesium Oxide"],
+                answer: 0,
+                explanation: "Washing soda is Sodium Carbonate Decahydrate.",
+                difficulty: "Easy",
+                topic: "Washing Soda"
+            },
+            {
+                question: "Which of the following is an alkali?",
+                options: ["Water-insoluble base", "Water-soluble base like NaOH", "Any acid", "Neutral salt"],
+                answer: 1,
+                explanation: "Alkalis are bases that dissolve in water (e.g., NaOH, KOH).",
+                difficulty: "Easy",
+                topic: "Acids & Bases Intro"
+            },
+            {
+                question: "What happens to H⁺ ion concentration as pH INCREASES from 7 to 14?",
+                options: ["H⁺ concentration increases", "H⁺ concentration decreases", "H⁺ concentration remains constant", "H⁺ becomes zero at pH 8"],
+                answer: 1,
+                explanation: "As pH increases towards 14, H⁺ ion concentration decreases and OH⁻ concentration increases.",
+                difficulty: "Medium",
+                topic: "pH Scale"
+            },
+            {
+                question: "Which indicator turns pink in basic solutions?",
+                options: ["Methyl orange", "Phenolphthalein", "Litmus", "Turmeric"],
+                answer: 1,
+                explanation: "Phenolphthalein turns pink in basic solution.",
+                difficulty: "Easy",
+                topic: "Visual Indicators"
+            },
+            {
+                question: "Which indicator turns yellow in basic solution and red in acidic solution?",
+                options: ["Methyl orange", "Phenolphthalein", "Litmus", "Onion"],
+                answer: 0,
+                explanation: "MaYoR rule: Methyl Orange is Yellow in Base and Red in Acid.",
+                difficulty: "Medium",
+                topic: "Visual Indicators"
+            },
+            {
+                question: "Why does distilled water NOT conduct electricity, whereas rainwater DOES?",
+                options: ["Distilled water has higher temperature", "Rainwater contains dissolved acidic gases (CO₂, SO₂) that produce ions", "Distilled water contains metallic ions", "Rainwater lacks hydrogen"],
+                answer: 1,
+                explanation: "Rainwater dissolves atmospheric gases forming acids that ionize, conducting electricity; pure distilled water lacks ions.",
+                difficulty: "Hard",
+                topic: "Electrical Conduction"
+            },
+            {
+                question: "Which of the following compounds does NOT contain water of crystallization?",
+                options: ["Blue Vitriol (CuSO₄·5H₂O)", "Baking Soda (NaHCO₃)", "Washing Soda (Na₂CO₃·10H₂O)", "Gypsum (CaSO₄·2H₂O)"],
+                answer: 1,
+                explanation: "Baking soda (NaHCO₃) is an anhydrous salt crystal without water of crystallization.",
+                difficulty: "Medium",
+                topic: "Water of Crystallization"
+            },
+            {
+                question: "What is the temperature in Celsius required to convert Gypsum into Plaster of Paris?",
+                options: ["0°C", "100°C (373 K)", "200°C", "500°C"],
+                answer: 1,
+                explanation: "373 K corresponds to 100°C (373 - 273 = 100°C).",
+                difficulty: "Medium",
+                topic: "Plaster of Paris"
+            }
+        ];
+
+        // State Management
+        let currentQuestions = [...masterQuestions];
+        let currentIndex = 0;
+        let userAnswers = new Array(currentQuestions.length).fill(null);
+        let isPracticeMode = false;
+
+        // DOM Elements
+        const qNumberEl = document.getElementById('qNumber');
+        const diffBadgeEl = document.getElementById('diffBadge');
+        const topicBadgeEl = document.getElementById('topicBadge');
+        const progressFillEl = document.getElementById('progressFill');
+        const qTextEl = document.getElementById('qText');
+        const optionsContainerEl = document.getElementById('optionsContainer');
+        const explanationBoxEl = document.getElementById('explanationBox');
+        const explanationTextEl = document.getElementById('explanationText');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const navGridEl = document.getElementById('navGrid');
+        const scoreDisplayEl = document.getElementById('scoreDisplay');
+        const scorePctEl = document.getElementById('scorePercentage');
+        const answeredCountEl = document.getElementById('answeredCount');
+        const modeBadgeEl = document.getElementById('modeBadge');
+
+        const questionCard = document.getElementById('questionCard');
+        const resultsCard = document.getElementById('resultsCard');
+
+        // Initialize App
+        function initQuiz() {
+            currentIndex = 0;
+            userAnswers = new Array(currentQuestions.length).fill(null);
+            
+            questionCard.classList.remove('hidden');
+            resultsCard.classList.remove('hidden');
+            resultsCard.style.display = 'none';
+
+            renderNavGrid();
+            renderQuestion();
+            updateScoreBar();
+        }
+
+        // Render Navigation Grid
+        function renderNavGrid() {
+            navGridEl.innerHTML = '';
+            currentQuestions.forEach((_, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'grid-item';
+                btn.textContent = idx + 1;
+                btn.onclick = () => jumpToQuestion(idx);
+                navGridEl.appendChild(btn);
+            });
+            updateNavGridStates();
+        }
+
+        function updateNavGridStates() {
+            const gridItems = navGridEl.children;
+            let doneCount = 0;
+
+            for (let i = 0; i < gridItems.length; i++) {
+                const item = gridItems[i];
+                item.className = 'grid-item';
+
+                if (i === currentIndex) {
+                    item.classList.add('current');
+                }
+
+                if (userAnswers[i] !== null) {
+                    doneCount++;
+                    if (userAnswers[i] === currentQuestions[i].answer) {
+                        item.classList.add('correct');
+                    } else {
+                        item.classList.add('wrong');
+                    }
+                }
+            }
+
+            answeredCountEl.textContent = `${doneCount}/${currentQuestions.length} Done`;
+        }
+
+        // Render Active Question
+        function renderQuestion() {
+            const q = currentQuestions[currentIndex];
+
+            // Progress & Meta
+            qNumberEl.textContent = `Question ${currentIndex + 1} of ${currentQuestions.length}`;
+            progressFillEl.style.width = `${((currentIndex + 1) / currentQuestions.length) * 100}%`;
+            
+            diffBadgeEl.textContent = q.difficulty;
+            diffBadgeEl.className = `badge badge-${q.difficulty.toLowerCase()}`;
+            
+            topicBadgeEl.textContent = q.topic || 'General';
+
+            qTextEl.textContent = q.question;
+
+            // Options
+            optionsContainerEl.innerHTML = '';
+            const prefixes = ['A', 'B', 'C', 'D'];
+
+            q.options.forEach((optText, optIdx) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+
+                const prefix = document.createElement('span');
+                prefix.className = 'option-prefix';
+                prefix.textContent = prefixes[optIdx];
+
+                const textSpan = document.createElement('span');
+                textSpan.textContent = optText;
+
+                btn.appendChild(prefix);
+                btn.appendChild(textSpan);
+
+                btn.onclick = () => selectAnswer(optIdx);
+
+                // If already answered
+                if (userAnswers[currentIndex] !== null) {
+                    btn.disabled = true;
+                    if (optIdx === q.answer) {
+                        btn.classList.add('correct');
+                    }
+                    if (userAnswers[currentIndex] === optIdx && optIdx !== q.answer) {
+                        btn.classList.add('wrong');
+                    }
+                }
+
+                optionsContainerEl.appendChild(btn);
+            });
+
+            // Explanation
+            if (userAnswers[currentIndex] !== null) {
+                explanationTextEl.textContent = q.explanation;
+                explanationBoxEl.style.display = 'block';
+            } else {
+                explanationBoxEl.style.display = 'none';
+            }
+
+            // Controls
+            prevBtn.disabled = currentIndex === 0;
+            if (currentIndex === currentQuestions.length - 1) {
+                nextBtn.textContent = 'Finish Quiz 🎉';
+            } else {
+                nextBtn.textContent = 'Next →';
+            }
+
+            updateNavGridStates();
+        }
+
+        // Handle Answer Selection
+        function selectAnswer(optIdx) {
+            if (userAnswers[currentIndex] !== null) return;
+
+            userAnswers[currentIndex] = optIdx;
+            renderQuestion();
+            updateScoreBar();
+        }
+
+        // Reset Current Question Answer
+        function resetCurrentQuestion() {
+            userAnswers[currentIndex] = null;
+            renderQuestion();
+            updateScoreBar();
+        }
+
+        // Navigation
+        function navigate(direction) {
+            if (direction === 1 && currentIndex === currentQuestions.length - 1) {
+                showResults();
+                return;
+            }
+
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex >= currentQuestions.length) currentIndex = currentQuestions.length - 1;
+
+            renderQuestion();
+        }
+
+        function jumpToQuestion(index) {
+            currentIndex = index;
+            renderQuestion();
+        }
+
+        // Update Sidebar Score
+        function updateScoreBar() {
+            let correct = 0;
+            let answered = 0;
+
+            userAnswers.forEach((ans, idx) => {
+                if (ans !== null) {
+                    answered++;
+                    if (ans === currentQuestions[idx].answer) {
+                        correct++;
+                    }
+                }
+            });
+
+            scoreDisplayEl.textContent = `${correct} / ${currentQuestions.length}`;
+            const pct = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+            scorePctEl.textContent = `${pct}% Accuracy (${answered} answered)`;
+        }
+
+        // Mode Switcher (Full 100 Qs vs Practice 40 Qs)
+        function toggleMode() {
+            isPracticeMode = !isPracticeMode;
+
+            if (isPracticeMode) {
+                // Shuffle & pick 40
+                const shuffled = [...masterQuestions].sort(() => 0.5 - Math.random());
+                currentQuestions = shuffled.slice(0, 40);
+                modeBadgeEl.textContent = 'Practice Mode (40 Qs)';
+            } else {
+                currentQuestions = [...masterQuestions];
+                modeBadgeEl.textContent = 'Full Bank (100 Qs)';
+            }
+
+            initQuiz();
+        }
+
+        // Show Final Results
+        function showResults() {
+            let correct = 0;
+            let wrong = 0;
+            let unanswered = 0;
+
+            userAnswers.forEach((ans, idx) => {
+                if (ans === null) {
+                    unanswered++;
+                } else if (ans === currentQuestions[idx].answer) {
+                    correct++;
+                } else {
+                    wrong++;
+                }
+            });
+
+            const total = currentQuestions.length;
+            const pct = Math.round((correct / total) * 100);
+
+            document.getElementById('resPct').textContent = `${pct}%`;
+            document.getElementById('resFraction').textContent = `${correct} / ${total}`;
+            document.getElementById('resCorrect').textContent = correct;
+            document.getElementById('resWrong').textContent = wrong;
+            document.getElementById('resUnanswered').textContent = unanswered;
+
+            let msg = '';
+            if (pct >= 90) msg = '🌟 Outstanding Mastery! Excellent Performance!';
+            else if (pct >= 75) msg = '👍 Great Job! Solid Conceptual Understanding!';
+            else if (pct >= 50) msg = '📖 Good Effort! Review missed concepts for better score.';
+            else msg = '💡 Needs Improvement. Re-read the notes and try again!';
+
+            document.getElementById('perfMessage').textContent = msg;
+
+            questionCard.classList.add('hidden');
+            resultsCard.style.display = 'flex';
+        }
+
+        function restartQuiz() {
+            initQuiz();
+        }
+
+        // Keyboard Navigation Support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                navigate(-1);
+            } else if (e.key === 'ArrowRight') {
+                navigate(1);
+            } else if (['1', '2', '3', '4'].includes(e.key)) {
+                selectAnswer(parseInt(e.key) - 1);
+            }
+        });
+
+        // Launch Quiz
+        initQuiz();
+    </script>
+</body>
+</html>
